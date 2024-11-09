@@ -1,35 +1,6 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-
-const useAnimatedNumber = (targetValue, duration) => {
-  const [currentValue, setCurrentValue] = useState(0);
-
-  useEffect(() => {
-    const startTime = Date.now();
-    
-    const animate = () => {
-      const currentTime = Date.now();
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      
-      const easeOut = (t) => 1 - Math.pow(1 - t, 3);
-      const currentNumber = Math.floor(easeOut(progress) * targetValue);
-      
-      setCurrentValue(currentNumber);
-      
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
-    };
-    
-    requestAnimationFrame(animate);
-    
-    return () => setCurrentValue(0);
-  }, [targetValue, duration]);
-
-  return currentValue;
-};
 
 const AchievementsSection = () => {
   const achievementsList = [
@@ -66,28 +37,27 @@ const AchievementsSection = () => {
     <section id="achievements" className="py-16">
       <div className="container mx-auto px-4 sm:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {achievementsList.map((achievement, index) => {
-            const animatedValue = useAnimatedNumber(achievement.value, 2000);
-
-            return (
-              <div
-                key={index}
-                className="bg-gray-800/50 p-6 rounded-lg hover:bg-gray-700/50 transition-all duration-300 text-center"
-              >
-                <div className="text-3xl font-bold text-yellow-500">
-                  {achievement.prefix && <span>{achievement.prefix}</span>}
-                  {animatedValue}
-                  {achievement.postfix && <span>{achievement.postfix}</span>}
-                </div>
-                <h4 className="mt-2 text-lg font-semibold text-white">
-                  {achievement.metric}
-                </h4>
-                <p className="mt-2 text-sm sm:text-base text-gray-400">
-                  {achievement.description}
-                </p>
+          {achievementsList.map((achievement, index) => (
+            <motion.div
+              key={index}
+              className="bg-gray-800/50 p-6 rounded-lg hover:bg-gray-700/50 transition-all duration-300 text-center"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+            >
+              <div className="text-3xl font-bold text-yellow-500">
+                {achievement.prefix && <span>{achievement.prefix}</span>}
+                {achievement.value}
+                {achievement.postfix && <span>{achievement.postfix}</span>}
               </div>
-            );
-          })}
+              <h4 className="mt-2 text-lg font-semibold text-white">
+                {achievement.metric}
+              </h4>
+              <p className="mt-2 text-sm sm:text-base text-gray-400">
+                {achievement.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

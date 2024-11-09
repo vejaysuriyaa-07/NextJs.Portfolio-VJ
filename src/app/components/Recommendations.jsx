@@ -1,5 +1,3 @@
-
-
 import React from "react";
 
 const Recommendations = () => {
@@ -18,7 +16,7 @@ const Recommendations = () => {
                           border border-gray-700">
               <div className="space-y-4">
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  "Vejaysuriyaa consistently impressed me with his dedication and performance in coursework, especially his A+ in the FPGA-based embedded systems course during his 7th semester. He has demonstrated strong problem-solving skills and a passion for technology."
+                  &quot;Vejaysuriyaa consistently impressed me with his dedication and performance in coursework, especially his A+ in the FPGA-based embedded systems course during his 7th semester. He has demonstrated strong problem-solving skills and a passion for technology.&quot;
                 </p>
                 <div className="pt-4 border-t border-gray-700">
                   <p className="text-white font-semibold">Dr. R. Mohanbabu</p>
@@ -35,7 +33,7 @@ const Recommendations = () => {
                           border border-gray-700">
               <div className="space-y-4">
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  "As NSS Coordinator, Vejaysuriyaa led initiatives like dental camps and awareness rallies. His compassion and drive to make a difference were also evident in his work with the 'GoGet' project, which aimed to alleviate community struggles."
+                  &quot;As NSS Coordinator, Vejaysuriyaa led initiatives like dental camps and awareness rallies. His compassion and drive to make a difference were also evident in his work with the &#39;GoGet&#39; project, which aimed to alleviate community struggles.&quot;
                 </p>
                 <div className="pt-4 border-t border-gray-700">
                   <p className="text-white font-semibold">Mr. S.D. Kumar</p>
@@ -53,7 +51,7 @@ const Recommendations = () => {
                           border border-gray-700">
               <div className="space-y-4">
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  "During the 'GoGet' and 'Food Wastage Reduction' projects, Vejaysuriyaa's front-end development skills played a key role in their success, both of which received O grades. His eagerness to learn and his ability to execute with precision make him an exceptional student."
+                  &quot;During the &#39;GoGet&#39; and &#39;Food Wastage Reduction&#39; projects, Vejaysuriyaa&#39;s front-end development skills played a key role in their success, both of which received O grades. His eagerness to learn and his ability to execute with precision make him an exceptional student.&quot;
                 </p>
                 <div className="pt-4 border-t border-gray-700">
                   <p className="text-white font-semibold">Dr. D. Manoj Kumar</p>
@@ -71,7 +69,7 @@ const Recommendations = () => {
                           border border-gray-700">
               <div className="space-y-4">
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  "Vejaysuriyaa was a co-author on the 'Food Wastage Reduction App' and one of the key contributors. As his class in-charge, I found him to be a versatile student, demonstrating a strong ability to learn and excel in a variety of technical areas. He truly lives up to the description of being a 'jack of all trades.'"
+                  &quot;Vejaysuriyaa was a co-author on the &#39;Food Wastage Reduction App&#39; and one of the key contributors. As his class in-charge, I found him to be a versatile student, demonstrating a strong ability to learn and excel in a variety of technical areas. He truly lives up to the description of being a &#39;jack of all trades.&#39;&quot;
                 </p>
                 <div className="pt-4 border-t border-gray-700">
                   <p className="text-white font-semibold">Dr. R. Arthi</p>
@@ -88,7 +86,7 @@ const Recommendations = () => {
                           border border-gray-700">
               <div className="space-y-4">
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  "Vejaysuriyaa was the head of our photography club in his final year, showing exceptional leadership and creativity. His technical expertise in photography, along with his proficiency in editing software, made him a standout member."
+                  &quot;Vejaysuriyaa was the head of our photography club in his final year, showing exceptional leadership and creativity. His technical expertise in photography, along with his proficiency in editing software, made him a standout member.&quot;
                 </p>
                 <div className="pt-4 border-t border-gray-700">
                   <p className="text-white font-semibold">Mr. Aravindhan</p>

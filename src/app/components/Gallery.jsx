@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
+import Image from "next/image"; // Import the Image component from Next.js
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -38,15 +39,17 @@ const Gallery = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative group h-[400px] overflow-hidden rounded-xl"
+              className="relative group h-[400px] w-full overflow-hidden rounded-xl"
             >
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300 z-10" />
               
-              <img
+              <Image
                 src={image}
                 alt={`Gallery Image ${index + 1}`}
-                className="w-full h-full object-cover object-center transition-all duration-500
-                         group-hover:scale-110"
+                layout="fill" // Uses the full size of the container
+                objectFit="cover" // Ensures the image fills the container without distortion
+                objectPosition="center" // Centers the image
+                className="transition-all duration-500 group-hover:scale-110"
               />
 
               {/* Hover Effects */}
@@ -79,9 +82,13 @@ const Gallery = () => {
             >
               <X size={24} />
             </button>
-            <img
+            <Image
               src={selectedImage}
               alt="Full size"
+              layout="intrinsic" // Keep intrinsic layout for the modal
+              objectFit="contain" // Preserve aspect ratio
+              width={800} // Set max width for large images
+              height={600} // Set max height for large images
               className="max-w-full max-h-full object-contain"
             />
           </div>
