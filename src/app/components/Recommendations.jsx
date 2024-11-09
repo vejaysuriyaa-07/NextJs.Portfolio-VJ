@@ -51,7 +51,7 @@ const Recommendations = () => {
                           border border-gray-700">
               <div className="space-y-4">
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  &quot;During the &#39;GoGet&#39; and &#39;Food Wastage Reduction&#39; projects, Vejaysuriyaa&#39;s front-end development skills played a key role in their success, both of which received O grades. His eagerness to learn and his ability to execute with precision make him an exceptional student.&quot;
+                  &quot;During the &#39;GoGet&#39; and &#39;Food Wastage Reduction&#39; projects, Vejaysuriyaa&#39;s backend development skills played a key role in their success, both of which received O grades. His eagerness to learn and his ability to execute with precision make him an exceptional student.&quot;
                 </p>
                 <div className="pt-4 border-t border-gray-700">
                   <p className="text-white font-semibold">Dr. D. Manoj Kumar</p>

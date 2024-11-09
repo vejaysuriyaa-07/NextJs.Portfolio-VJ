@@ -151,15 +151,7 @@ const TAB_DATA = [
           </div>
         ))}
 
-        <a
-          href="https://drive.google.com/drive/folders/1-IuETGWUYxsxBwatkSqJA8935n3QqiN2?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 sm:gap-2 mt-4 text-sm sm:text-base text-blue-500 hover:text-blue-400 transition-colors"
-        >
-          View All Certifications
-          <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
-        </a>
+       
       </div>
     ),
   },
