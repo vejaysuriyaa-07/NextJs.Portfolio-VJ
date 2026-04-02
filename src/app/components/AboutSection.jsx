@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Cpu, GraduationCap, Briefcase, Award } from "lucide-react";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const TAB_DATA = [
   {
     title: "Skills",
@@ -117,7 +119,7 @@ const TAB_DATA = [
           <div className="flex items-center">
             <div className="relative w-12 h-12 sm:w-16 sm:h-16 mr-3 sm:mr-4 flex-shrink-0">
               <Image
-                src="/images/ECE-RGB-FH-GC-W.png"
+                src={`${basePath}/images/ECE-RGB-FH-GC-W.png`}
                 alt="USC Logo"
                 fill
                 className="object-contain"
@@ -145,7 +147,7 @@ const TAB_DATA = [
           <div className="flex items-center">
             <div className="relative w-12 h-12 sm:w-16 sm:h-16 mr-3 sm:mr-4 flex-shrink-0">
               <Image
-                src="/images/ZYPHER - BADGES - FINAL (1).png"
+                src={`${basePath}/images/ZYPHER - BADGES - FINAL (1).png`}
                 alt="SRM Logo"
                 fill
                 className="object-contain"

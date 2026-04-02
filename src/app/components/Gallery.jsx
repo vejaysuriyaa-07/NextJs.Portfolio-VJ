@@ -5,19 +5,21 @@ import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import Image from "next/image"; // Import the Image component from Next.js
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const images = [
-    "/images/DSC07511.JPG",
-    "/images/DSC07240.JPG",
-    "/images/polish_save.JPG",
-    "/images/IMG_0274_Original.jpg",
-    "/images/IMG_0994.jpg",
-    "/images/polish_save 2.JPG",
-    "/images/polish_save 3.JPG",
-    "/images/_DSC2231_Original.jpg",
-    "/images/polish_save.PNG",
+    `${basePath}/images/DSC07511.JPG`,
+    `${basePath}/images/DSC07240.JPG`,
+    `${basePath}/images/polish_save.JPG`,
+    `${basePath}/images/IMG_0274_Original.jpg`,
+    `${basePath}/images/IMG_0994.jpg`,
+    `${basePath}/images/polish_save 2.JPG`,
+    `${basePath}/images/polish_save 3.JPG`,
+    `${basePath}/images/_DSC2231_Original.jpg`,
+    `${basePath}/images/polish_save.PNG`,
   ];
 
   return (

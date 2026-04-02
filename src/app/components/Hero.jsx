@@ -4,6 +4,8 @@ import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const Hero = () => {
   return (
     <section id="hero" className="lg:py-16 pt-20 z-10 relative">
@@ -45,7 +47,7 @@ const Hero = () => {
         >
           <div className="rounded-full bg- w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] lg:w-[250px] lg:h-[250px] xl:w-[400px] xl:h-[400px] flex justify-center items-center relative">
             <Image
-              src="/images/fotor-20241030224834_copy-removebg-preview.png"
+              src={`${basePath}/images/fotor-20241030224834_copy-removebg-preview.png`}
               alt="hero image"
               className="rounded-full object-cover"
               width={400}
