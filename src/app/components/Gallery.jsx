@@ -29,8 +29,17 @@ const Gallery = () => {
           transition={{ duration: 0.6 }}
           className="text-center text-4xl font-bold text-white mb-12"
         >
-          My Gallery
+          Leadership & Community Highlights
         </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-center text-[#ADB7BE] max-w-3xl mx-auto mb-10 text-sm sm:text-base lg:text-lg"
+        >
+          A visual snapshot of volunteer work, NSS activities, awards, and
+          campus moments alongside the main DFT and VLSI portfolio.
+        </motion.p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {images.map((image, index) => (
@@ -46,10 +55,9 @@ const Gallery = () => {
               <Image
                 src={image}
                 alt={`Gallery Image ${index + 1}`}
-                layout="fill" // Uses the full size of the container
-                objectFit="cover" // Ensures the image fills the container without distortion
-                objectPosition="center" // Centers the image
+                fill
                 className="transition-all duration-500 group-hover:scale-110"
+                style={{ objectFit: "cover", objectPosition: "center" }}
               />
 
               {/* Hover Effects */}
@@ -85,10 +93,8 @@ const Gallery = () => {
             <Image
               src={selectedImage}
               alt="Full size"
-              layout="intrinsic" // Keep intrinsic layout for the modal
-              objectFit="contain" // Preserve aspect ratio
-              width={800} // Set max width for large images
-              height={600} // Set max height for large images
+              width={800}
+              height={600}
               className="max-w-full max-h-full object-contain"
             />
           </div>

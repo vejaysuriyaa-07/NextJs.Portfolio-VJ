@@ -2,10 +2,9 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import AboutSection from "./components/AboutSection";
 import ProjectsSection from "./components/ProjectsSection";
-import Recommendations from "./components/Recommendations";
+import Gallery from "./components/Gallery";
 import Footer from "./components/Footer";
 import AchievementsSection from "./components/AchievementsSection";
-import Gallery from "./components/Gallery"; // Import the Gallery component
 
 export default function Home() {
   return (
@@ -16,11 +15,7 @@ export default function Home() {
         <AchievementsSection />
         <AboutSection />
         <ProjectsSection />
-        
-        {/* Add the Gallery section here */}
         <Gallery />
-
-        <Recommendations />  
       </div>
       <Footer />
     </main>

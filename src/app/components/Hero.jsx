@@ -21,11 +21,7 @@ const Hero = () => {
             <br />
             <TypeAnimation
               sequence={[
-                "VejaySuriyaa ",
-                1000,
-                "Web Developer",
-                1000,
-                "Photographer",
+                "Vejay Suriyaa",
                 1000,
               ]}
               wrapper="span"
@@ -34,8 +30,9 @@ const Hero = () => {
               className="type-animation"
             />
           </h1>
-          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            Clicks by sunlight, stacks by moonlight – shaping stories and creating change in the quiet corners.
+          <p className="text-[#ADB7BE] italic text-base sm:text-lg mb-6 lg:text-xl">
+            Aspiring DFT Engineer focused on scan insertion, ATPG, BIST, RTL
+            design, VLSI test, and timing-driven implementation.
           </p>
         </motion.div>
 
@@ -89,7 +86,7 @@ const Hero = () => {
             margin-top: 20px;
           }
 
-          /* Scaling down the photographer text to avoid overlap */
+          /* Scaling down the rotating title text to avoid overlap */
           .type-animation {
             font-size: 2rem; /* Adjust the size slightly on smaller screens */
           }
@@ -101,7 +98,7 @@ const Hero = () => {
           }
         }
 
-        /* Preventing overlap by scaling the "Photographer" text */
+        /* Preventing overlap by scaling the longest title on medium screens */
         @media (min-width: 768px) and (max-width: 1024px) {
           .type-animation {
             transform: scale(0.9);  /* Reduce the size slightly on medium screens */

@@ -6,9 +6,9 @@ import { motion, AnimatePresence } from "framer-motion";
 const navLinks = [
   { title: "Home", path: "#hero" },
   { title: "About", path: "#about" },
+  { title: "Achievements", path: "#achievements" },
   { title: "Projects", path: "#projects" },
-  { title: "Gallery", path: "#gallery" },
-  { title: "Recommendations", path: "#recommendations" },
+  { title: "Highlights", path: "#gallery" },
 ];
 
 // Enhanced NavLink component with animations

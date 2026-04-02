@@ -7,21 +7,38 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "Food Wastage Reduction Website",
+    title: "Circuit ATPG Simulator",
     description:
-      "A platform connecting food donors with organizations to minimize food wastage and fight hunger.",
-    image: "/images/FoodReduction.png",
-    tag: ["All", "Web"],
-    previewUrl: "https://foodwastagereduction.onrender.com",
+      "Developed a 6,400+ line C++ ATPG engine for ISCAS-85 benchmarks with D-Algorithm, recursive backtracking, D/J-frontier handling, and SCOAP-guided search heuristics.",
+    tag: ["All", "DFT"],
   },
   {
     id: 2,
-    title: "GO GET All-In-One Donation App",
+    title: "BIST Simulator with LFSR / MISR",
     description:
-      "A mobile and web app for streamlined donations, promoting accessibility and impactful giving.",
-    image: "/images/Goget2.png",
-    tag: ["All", "Web", "Mobile"],
-    previewUrl: "https://goget-42tz.onrender.com",
+      "Built a BIST controller using Galois LFSR pattern generation and MISR response compression, reaching 100% fault coverage on c17 and strong coverage on c432 and c880.",
+    tag: ["All", "DFT"],
+  },
+  {
+    id: 3,
+    title: "Scan Chain Simulator",
+    description:
+      "Implemented full-scan insertion for sequential circuits, modeling shift and capture behavior to transform sequential designs into pseudo-combinational ATPG targets.",
+    tag: ["All", "DFT"],
+  },
+  {
+    id: 4,
+    title: "RTL-to-GDSII Physical Design Flow",
+    description:
+      "Completed synthesis, floorplanning, placement, CTS, routing, and signoff for a 28nm digital block, improving worst-case slack from -0.8 ns to +0.2 ns at 150 MHz.",
+    tag: ["All", "Physical Design"],
+  },
+  {
+    id: 5,
+    title: "Low-Power Arithmetic and Memory Blocks",
+    description:
+      "Designed Verilog arithmetic and memory blocks including a 32-bit Wallace tree multiplier, Booth multiplier, and dual-port SRAM controller with ModelSim verification.",
+    tag: ["All", "RTL / VLSI"],
   },
 ];
 
@@ -50,7 +67,7 @@ const ProjectsSection = () => {
         <div className="border-2 border-gray-600 p-6 rounded-lg">
           {/* Section Header */}
           <h2 className="text-center text-3xl sm:text-4xl font-bold text-white mb-8 sm:mb-10 md:mb-12">
-            My Projects
+            DFT & EE Projects
           </h2>
 
           {/* Project Tags */}
@@ -62,13 +79,18 @@ const ProjectsSection = () => {
             />
             <ProjectTag
               onClick={handleTagChange}
-              name="Web"
-              isSelected={tag === "Web"}
+              name="DFT"
+              isSelected={tag === "DFT"}
             />
             <ProjectTag
               onClick={handleTagChange}
-              name="Mobile"
-              isSelected={tag === "Mobile"}
+              name="RTL / VLSI"
+              isSelected={tag === "RTL / VLSI"}
+            />
+            <ProjectTag
+              onClick={handleTagChange}
+              name="Physical Design"
+              isSelected={tag === "Physical Design"}
             />
           </div>
 
@@ -76,7 +98,7 @@ const ProjectsSection = () => {
           <div className="w-full">
             <ul
               ref={ref}
-              className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12"
+              className="grid grid-cols-1 md:grid-cols-2 auto-rows-fr gap-6 sm:gap-8 md:gap-10 lg:gap-12"
             >
               {filteredProjects.map((project, index) => (
                 <motion.li
@@ -84,14 +106,12 @@ const ProjectsSection = () => {
                   variants={cardVariants}
                   initial="initial"
                   animate={isInView ? "animate" : "initial"}
-                  transition={{ duration: 0.3, delay: index * 0.4 }}
+                  transition={{ duration: 0.3, delay: index * 0.2 }}
                   className="w-full"
                 >
                   <ProjectCard
                     title={project.title}
                     description={project.description}
-                    imgUrl={project.image}
-                    previewUrl={project.previewUrl}
                   />
                 </motion.li>
               ))}
@@ -103,10 +123,11 @@ const ProjectsSection = () => {
             <div className="max-w-3xl mx-auto text-center">
               <p className="text-[#ADB7BE] text-base sm:text-lg leading-relaxed">
                 <span className="block text-white text-xl sm:text-2xl font-bold mb-2 sm:mb-3">
-                  Note:
+                  Focus:
                 </span>
-                These projects are hosted on free-tier servers and may take up to 50 seconds 
-                to activate after periods of inactivity. Once live, all features work seamlessly.
+                This portfolio is intentionally centered on DFT, VLSI
+                implementation, RTL design, low-power analysis, and
+                benchmark-driven validation for semiconductor-oriented roles.
               </p>
             </div>
           </div>
