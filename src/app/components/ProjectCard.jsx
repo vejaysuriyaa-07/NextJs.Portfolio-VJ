@@ -1,9 +1,27 @@
 import React from "react";
 import { ExternalLink, Github } from "lucide-react";
 
+// Tracks the pointer inside the card so the tile-glow overlay can follow it.
+const trackPointer = (e) => {
+  const rect = e.currentTarget.getBoundingClientRect();
+  e.currentTarget.style.setProperty("--x", `${e.clientX - rect.left}px`);
+  e.currentTarget.style.setProperty("--y", `${e.clientY - rect.top}px`);
+};
+
 const ProjectCard = ({ title, tech, description, bullets, links }) => {
   return (
-    <div className="h-full flex flex-col rounded-xl border border-slate-700 bg-[#151515] p-6 sm:p-7 transition-all duration-300 hover:border-slate-500 hover:bg-[#1a1a1a]">
+    <div
+      onPointerMove={trackPointer}
+      className="group relative h-full flex flex-col overflow-hidden rounded-xl border border-slate-700 bg-[#151515] p-6 sm:p-7 transition-all duration-300 hover:border-slate-500 hover:bg-[#1a1a1a]"
+    >
+      <div
+        aria-hidden="true"
+        className="tile-glow pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        style={{
+          background:
+            "radial-gradient(400px circle at var(--x, 50%) var(--y, 50%), rgba(59, 130, 246, 0.12), transparent 45%)",
+        }}
+      />
       <h5 className="text-white text-xl font-semibold mb-3">{title}</h5>
       <div className="flex flex-wrap gap-2 mb-4">
         {tech.map((item) => (

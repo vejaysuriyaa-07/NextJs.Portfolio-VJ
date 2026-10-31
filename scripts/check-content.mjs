@@ -21,6 +21,7 @@ const REQUIRED = [
   "Best NSS Coordinator",
   "Write-up coming",
   "resume.pdf",
+  "tile-glow",
   "Circuit traces",
   "stuck-at coverage: 97.37–100% (6 circuits)",
   "coverage: 98.36% → 99.87%",
