@@ -7,10 +7,9 @@ const AchievementsSection = () => {
     {
       metric: "Stuck-at Fault Coverage",
       value: 100,
-      prefix: "97.37–",
       postfix: "%",
       description:
-        "Across 6 ISCAS-85 circuits from a C++17 D-Algorithm ATPG engine with SCOAP heuristics."
+        "Top of a 97.37 to 100% range across 6 ISCAS-85 circuits, from a C++17 D-Algorithm ATPG engine with SCOAP heuristics."
     },
     {
       metric: "c432 Coverage with TPI",
