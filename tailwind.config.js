@@ -16,6 +16,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        trace: {
+          from: { strokeDashoffset: "100" },
+          to: { strokeDashoffset: "0" },
+        },
+      },
+      animation: {
+        trace: "trace 6s linear infinite",
+        "spin-slow": "spin 8s linear infinite",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

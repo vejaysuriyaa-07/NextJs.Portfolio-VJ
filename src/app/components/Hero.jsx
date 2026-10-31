@@ -4,6 +4,8 @@ import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import { FileText, Github, Linkedin, Mail } from "lucide-react";
+import CircuitTraces from "./CircuitTraces";
+import HeroTerminal from "./HeroTerminal";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -17,6 +19,7 @@ const heroLinks = [
 const Hero = () => {
   return (
     <section id="hero" className="lg:py-16 pt-20 z-10 relative">
+      <CircuitTraces />
       <div className="flex flex-col sm:grid sm:grid-cols-12 gap-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
@@ -67,6 +70,7 @@ const Hero = () => {
               </motion.a>
             ))}
           </div>
+          <HeroTerminal />
         </motion.div>
 
         {/* Responsive profile image section */}
@@ -77,10 +81,26 @@ const Hero = () => {
           className="flex justify-center items-center mt-4 lg:mt-0 sm:col-span-4"
         >
           <div className="rounded-full bg- w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] lg:w-[250px] lg:h-[250px] xl:w-[400px] xl:h-[400px] flex justify-center items-center relative">
+            <span
+              aria-hidden="true"
+              className="absolute -inset-2 opacity-80 blur-md motion-safe:animate-spin-slow"
+              style={{
+                borderRadius: "9999px",
+                background: "conic-gradient(from 0deg, #60a5fa, #dc2626, #60a5fa)",
+              }}
+            />
+            <span
+              aria-hidden="true"
+              className="absolute -inset-1 motion-safe:animate-spin-slow"
+              style={{
+                borderRadius: "9999px",
+                background: "conic-gradient(from 0deg, #60a5fa, #dc2626, #60a5fa)",
+              }}
+            />
             <Image
               src={`${basePath}/images/fotor-20241030224834_copy-removebg-preview.png`}
               alt="hero image"
-              className="rounded-full object-cover"
+              className="relative rounded-full object-cover"
               width={400}
               height={400}
             />
