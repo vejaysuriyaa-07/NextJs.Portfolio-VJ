@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import CountUp from "./CountUp";
+import TileGlow, { trackPointer } from "./TileGlow";
 
 const AchievementsSection = () => {
   const achievementsList = [
@@ -48,20 +50,23 @@ const AchievementsSection = () => {
           {achievementsList.map((achievement, index) => (
             <motion.div
               key={index}
-              className="bg-gray-800/50 p-6 rounded-lg hover:bg-gray-700/50 transition-all duration-300 text-center"
+              onPointerMove={trackPointer}
+              className="group relative overflow-hidden bg-gray-800/50 p-6 rounded-lg hover:bg-gray-700/50 transition-colors duration-300 text-center"
               initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
             >
-              <div className="text-3xl font-bold text-yellow-500">
+              <TileGlow size={250} />
+              <div className="relative text-3xl font-bold text-yellow-500">
                 {achievement.prefix && <span>{achievement.prefix}</span>}
-                {achievement.value}
+                <CountUp value={achievement.value} delay={index * 0.15 + 0.3} />
                 {achievement.postfix && <span>{achievement.postfix}</span>}
               </div>
-              <h4 className="mt-2 text-lg font-semibold text-white">
+              <h4 className="relative mt-2 text-lg font-semibold text-white">
                 {achievement.metric}
               </h4>
-              <p className="mt-2 text-sm sm:text-base text-gray-400">
+              <p className="relative mt-2 text-sm sm:text-base text-gray-400">
                 {achievement.description}
               </p>
             </motion.div>

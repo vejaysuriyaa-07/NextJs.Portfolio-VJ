@@ -22,6 +22,7 @@ const REQUIRED = [
   "Write-up coming",
   "resume.pdf",
   "tile-glow",
+  "data-countup",
   "Circuit traces",
   "stuck-at coverage: 97.37–100% (6 circuits)",
   "coverage: 98.36% → 99.87%",
