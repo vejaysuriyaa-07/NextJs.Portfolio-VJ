@@ -1,8 +1,8 @@
 # Notes
 
 ## Status
-Content rewrite against `public/resume.pdf` is done. Now building the visual polish list
-(16 ideas, all approved). Test: `npm run build && npm run test:content` (string checks on
+Content rewrite against `public/resume.pdf` is done. The visual polish list
+(16 ideas, all approved) is built. Test: `npm run build && npm run test:content` (string checks on
 the static export), plus `npm run lint`.
 
 | Phase | What | State |
@@ -12,7 +12,7 @@ the static export), plus `npm run lint`.
 | A | number tiles: count-up, pointer glow (shared `TileGlow`) | done |
 | B | projects: featured ISP card, expandable cards, per-project illustrations, tilt | done |
 | C | experience timeline (`#experience`, fixes dead nav link) | done |
-| D | photo gallery wall (same photos) | next |
+| D | photo gallery wall (same photos) | done |
 
 ## Decisions
 - Project illustrations are labelled "Illustration" and carry no numbers, so none reads as tool output.
@@ -23,10 +23,14 @@ the static export), plus `npm run lint`.
 - Reduced motion is read after mount in visuals (`useStill`); reading it during render caused a hydration mismatch.
 
 ## Last update
-Phase C: new `ExperienceTimeline.jsx` section (`#experience`) between About and Projects;
-Experience tab removed from About. Navbar link checked in Chrome. Content check 29/29
-required, 22/22 forbidden absent; lint clean. Check pages on the static export
-(`python3 -m http.server --directory out`), not `next dev` while building: both write `.next/`.
+Phase D: `Gallery.jsx` is a masonry photo wall (same 9 photos), modal with Esc, focus
+trap, scroll lock and focus return. Checked in Chrome. Content check 30/30 required, 22/22
+forbidden absent; lint clean. Per-phase log in `NOTES-archive.md`.
+
+## Open
+- RTL Live card: replace the drawn mock with a real screen recording when one exists.
+- Live GitHub Pages deploy not confirmed (runs on push to main).
+- Brief's final "matches resume: yes/no" checklist not written yet.
 
 ## Next step
-Phase D: `Gallery.jsx` gallery wall (rewritten, uncommitted), add "Photo wall" to the content check.
+None queued. Push to main to deploy, then check the live site.
