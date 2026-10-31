@@ -15,6 +15,7 @@ const REQUIRED = [
   "RL Agent for Post-Route DRC Closure",
   "github.com/vejaysuriyaa-07/atpg-tpi-ppa",
   "github.com/vejaysuriyaa-07/rtl-live",
+  "marketplace.visualstudio.com/items?itemName=vejaysuriyaa.rtl-live",
   "github.com/vejaysuriyaa-07/tt-camera-isp",
   "ieeexplore.ieee.org/document/10575000",
   "Best NSS Coordinator",

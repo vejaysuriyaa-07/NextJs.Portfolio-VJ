@@ -63,7 +63,10 @@ const projectsData = [
       "Built and published a VS Code extension that renders a live Verilog schematic in the sidebar on every edit, with 2 synthesized views.",
       "Delivered with an agentic AI coding workflow (Claude Code): spec, acceptance criteria, overnight autonomous build, release in a week.",
     ],
-    links: [{ label: "GitHub", href: "https://github.com/vejaysuriyaa-07/rtl-live" }],
+    links: [
+      { label: "Marketplace", href: "https://marketplace.visualstudio.com/items?itemName=vejaysuriyaa.rtl-live" },
+      { label: "GitHub", href: "https://github.com/vejaysuriyaa-07/rtl-live" },
+    ],
     tag: ["All", "Tooling"],
   },
 ];
