@@ -2,9 +2,116 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Cpu, GraduationCap, Briefcase, Award } from "lucide-react";
+import { Cpu, GraduationCap, Briefcase, BookOpen, Award, ExternalLink } from "lucide-react";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
+// Grouped exactly like the resume's Technical Skills section.
+const SKILL_GROUPS = [
+  {
+    title: "Verification and Test",
+    heading: "text-blue-500",
+    dot: "bg-blue-500",
+    skills: [
+      "Test planning",
+      "Golden/reference models (Python)",
+      "Self-checking tests",
+      "Test-first (model-before-RTL) flow",
+      "Fault simulation",
+      "ATPG (D-Algorithm, PODEM, SCOAP)",
+      "Scan insertion",
+      "BIST (LFSR/MISR)",
+      "Stuck-at and transition fault models",
+      "Memory test",
+    ],
+  },
+  {
+    title: "HDL and Programming",
+    heading: "text-green-500",
+    dot: "bg-green-500",
+    skills: [
+      "Verilog",
+      "SystemVerilog (RTL and testbench fundamentals)",
+      "C++",
+      "Python (NumPy)",
+      "Tcl (Innovus scripting)",
+      "MATLAB",
+      "Bash, Make",
+      "Linux, Git/GitHub",
+    ],
+  },
+  {
+    title: "AI / ML",
+    heading: "text-pink-500",
+    dot: "bg-pink-500",
+    skills: [
+      "Reinforcement learning (MDPs, value/policy methods, policy gradient)",
+      "LLM fundamentals (transformers, RL fine-tuning)",
+      "RL for EDA",
+      "In-memory computing for AI hardware (RRAM crossbars, SRAM compute-in-memory)",
+    ],
+  },
+  {
+    title: "AI-Native Development",
+    heading: "text-purple-500",
+    dot: "bg-purple-500",
+    skills: [
+      "Agentic coding with Claude Code",
+      "Spec-driven builds",
+      "CLAUDE.md context engineering",
+      "Autonomous overnight builds",
+      "AI code review in GitHub",
+      "Agent workflow design",
+      "Prompt engineering",
+      "LLM workflow automation",
+    ],
+  },
+  {
+    title: "EDA Tools",
+    heading: "text-yellow-500",
+    dot: "bg-yellow-500",
+    skills: [
+      "Cadence Xcelium (RTL simulation)",
+      "SimVision (waveform debug)",
+      "Innovus (place and route, ecoRoute, verify_drc)",
+      "Virtuoso (schematic and layout)",
+      "KLayout (DRC)",
+      "mflowgen",
+      "HSPICE",
+      "LTspice",
+      "ModelSim",
+      "SkyWater SKY130 PDK",
+    ],
+  },
+];
+
+const EXPERIENCE = [
+  {
+    title:
+      "Course Producer, EE 658 Diagnosis and Design of Reliable Digital Systems (graduate DFT)",
+    place: "University of Southern California",
+    dates: "Aug 2026 - Present",
+    bullets: [
+      "Selected by Prof. Moe Tabar after earning an A; grade homework, projects and exams on fault modeling, ATPG, fault simulation and BIST.",
+      "Hold weekly office hours on test generation, fault simulation and testability problems; set assignment deadlines and proctor exams.",
+    ],
+  },
+  {
+    title: "Research Assistant, In-Memory Computing and VLSI",
+    place: "Prof. Mohanbabu A.'s lab, SRM IST Chennai (part-time)",
+    dates: "Jan 2025 - Jul 2025",
+    bullets: [
+      "Simulated RRAM crossbar arrays in HSPICE and LTspice for analog in-memory computing (IMC) matrix-vector multiplication; worked on SRAM compute-in-memory circuits in Cadence Virtuoso with Verilog/ModelSim for the digital side.",
+      "Modeled in Python and MATLAB how device variation and limited precision degrade neural-network accuracy on IMC hardware.",
+    ],
+  },
+];
+
+const LEADERSHIP = [
+  { title: "ECE Senator, Viterbi Graduate Student Association, USC", dates: "Aug - Dec 2025" },
+  { title: "Head of Photography, Camogenics, SRM", dates: "2022 - 2024" },
+  { title: "Best NSS Coordinator (Institute Award), SRM", dates: "2022 - 2023" },
+];
 
 const TAB_DATA = [
   {
@@ -13,99 +120,25 @@ const TAB_DATA = [
     icon: <Cpu className="w-4 h-4 sm:w-5 sm:h-5" />,
     content: (
       <div className="space-y-6">
-        <div>
-          <h3 className="text-blue-500 font-semibold mb-3 flex items-center gap-2">
-            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
-            DFT & Test Engineering
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {[
-              "Scan insertion (full-scan)",
-              "ATPG: D-Algorithm and PODEM",
-              "Stuck-at fault modeling",
-              "Parallel and deductive fault simulation",
-              "Fault coverage analysis and reduced fault lists",
-              "BIST with LFSR / MISR and SCOAP metrics",
-            ].map((skill, index) => (
-              <div
-                key={index}
-                className="flex items-center p-4 sm:p-6 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-all duration-300 text-sm sm:text-base lg:text-lg"
-              >
-                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-blue-500 rounded-full mr-3 sm:mr-4" />
-                <span>{skill}</span>
-              </div>
-            ))}
+        {SKILL_GROUPS.map((group) => (
+          <div key={group.title}>
+            <h3 className={`${group.heading} font-semibold mb-3 flex items-center gap-2`}>
+              <span className={`w-1.5 h-1.5 ${group.dot} rounded-full`}></span>
+              {group.title}
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              {group.skills.map((skill, index) => (
+                <div
+                  key={index}
+                  className="flex items-center p-4 sm:p-6 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-all duration-300 text-sm sm:text-base lg:text-lg"
+                >
+                  <div className={`w-2 h-2 sm:w-2.5 sm:h-2.5 ${group.dot} rounded-full mr-3 sm:mr-4 flex-shrink-0`} />
+                  <span>{skill}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-
-        <div>
-          <h3 className="text-green-500 font-semibold mb-3 flex items-center gap-2">
-            <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
-            Hardware / RTL
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {[
-              "Verilog",
-              "SystemVerilog",
-              "VHDL",
-              "Arithmetic and memory block design",
-              "Testbenches and verification",
-              "Embedded systems fundamentals",
-            ].map((skill, index) => (
-              <div
-                key={index}
-                className="flex items-center p-4 sm:p-6 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-all duration-300 text-sm sm:text-base lg:text-lg"
-              >
-                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-green-500 rounded-full mr-3 sm:mr-4" />
-                <span>{skill}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <h3 className="text-yellow-500 font-semibold mb-3 flex items-center gap-2">
-            <span className="w-1.5 h-1.5 bg-yellow-500 rounded-full"></span>
-            EDA & Tools
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {[
-              "Tessent (familiar)",
-              "Cadence Virtuoso (schematic/layout/DRC/LVS)",
-              "Synopsys Design Compiler",
-              "PrimeTime (STA)",
-              "ModelSim / Questa",
-              "45nm GPDK and 28nm standard cell flows",
-              "Linux and Git",
-            ].map((skill, index) => (
-              <div
-                key={index}
-                className="flex items-center p-4 sm:p-6 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-all duration-300 text-sm sm:text-base lg:text-lg"
-              >
-                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-yellow-500 rounded-full mr-3 sm:mr-4" />
-                <span>{skill}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <h3 className="text-purple-500 font-semibold mb-3 flex items-center gap-2">
-            <span className="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>
-            Programming
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {["C", "C++", "Python", "MATLAB"].map((skill, index) => (
-              <div
-                key={index}
-                className="flex items-center p-4 sm:p-6 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-all duration-300 text-sm sm:text-base lg:text-lg"
-              >
-                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-purple-500 rounded-full mr-3 sm:mr-4" />
-                <span>{skill}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
     ),
   },
@@ -127,17 +160,19 @@ const TAB_DATA = [
             </div>
             <div>
               <h3 className="font-bold text-base sm:text-lg">
-                University of Southern California
+                University of Southern California, Los Angeles, CA
               </h3>
               <p className="text-gray-400 text-sm sm:text-base">
-                M.S. in Computer Engineering
+                Master of Science in Electrical and Computer Engineering
               </p>
               <p className="text-blue-500 text-sm sm:text-base">
-                Aug 2025 - Present
+                Aug 2025 - May 2027 (Expected)
               </p>
               <p className="text-gray-400 text-sm sm:text-base mt-2">
-                Coursework: MOS VLSI Circuit Design, VLSI System Design,
-                Computer Systems Organization, Computer System Architecture
+                Coursework: Diagnosis and Design of Reliable Digital Systems
+                (DFT), VLSI System Design, MOS VLSI Circuit Design, Computer
+                Systems Organization, Integrated Memory Devices and
+                Technologies, Reinforcement Learning and LLMs
               </p>
             </div>
           </div>
@@ -155,17 +190,13 @@ const TAB_DATA = [
             </div>
             <div>
               <h3 className="font-bold text-base sm:text-lg">
-                SRM Institute of Science & Technology
+                SRM Institute of Science and Technology, Chennai, India
               </h3>
               <p className="text-gray-400 text-sm sm:text-base">
-                B.Tech in Electronics and Computer Engineering
+                Bachelor of Technology in Electronics and Computer Engineering
               </p>
               <p className="text-blue-500 text-sm sm:text-base">
                 Nov 2020 - May 2024
-              </p>
-              <p className="text-gray-400 text-sm sm:text-base mt-2">
-                Coursework: Digital Logic Design, Microprocessors &
-                Microcontrollers, Embedded Systems
               </p>
             </div>
           </div>
@@ -179,83 +210,70 @@ const TAB_DATA = [
     icon: <Briefcase className="w-4 h-4 sm:w-5 sm:h-5" />,
     content: (
       <div className="space-y-3 sm:space-y-4">
+        {EXPERIENCE.map((role) => (
+          <div
+            key={role.title}
+            className="bg-gray-800/50 p-4 sm:p-5 rounded-lg hover:bg-gray-700/50 transition-all duration-300"
+          >
+            <h3 className="font-bold text-base sm:text-lg">{role.title}</h3>
+            <p className="text-gray-400 text-sm sm:text-base">{role.place}</p>
+            <p className="text-blue-500 text-sm sm:text-base mt-1">{role.dates}</p>
+            <ul className="mt-4 space-y-2 text-sm sm:text-base text-gray-300 list-disc pl-5">
+              {role.bullets.map((bullet, index) => (
+                <li key={index}>{bullet}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    ),
+  },
+  {
+    title: "Publication",
+    id: "publication",
+    icon: <BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />,
+    content: (
+      <div className="space-y-3 sm:space-y-4">
         <div className="bg-gray-800/50 p-4 sm:p-5 rounded-lg hover:bg-gray-700/50 transition-all duration-300">
           <h3 className="font-bold text-base sm:text-lg">
-            Research Assistant, Embedded Systems & VLSI
+            A Food Wastage Reduction App based on Django Python Application
           </h3>
-          <p className="text-gray-400 text-sm sm:text-base">
-            SRM Institute of Science & Technology | Jan 2025 - Jul 2025
+          <p className="text-gray-400 text-sm sm:text-base mt-1">
+            D. Manoj Kumar, R. Arthi, M. Gokulakrishnan, T. Praveen Kumar,
+            S. Vejaysuriyaa
           </p>
           <p className="text-blue-500 text-sm sm:text-base mt-1">
-            Advisor: Prof. Mohanbabu A., M.E, Ph.D
+            3rd Int. Conf. on Applied Artificial Intelligence and Computing
+            (ICAAIC), IEEE, June 2024
           </p>
-          <ul className="mt-4 space-y-2 text-sm sm:text-base text-gray-300 list-disc pl-5">
-            <li>
-              Optimized low-power VLSI and embedded prototype modules, with
-              contributions across 3 hardware-focused prototypes.
-            </li>
-            <li>
-              Designed 5 Verilog arithmetic and memory blocks including a 32-bit
-              Wallace tree multiplier, Booth multiplier, and dual-port SRAM
-              controller.
-            </li>
-            <li>
-              Ran 12 schematic and layout simulations in Cadence Virtuoso using
-              45nm GPDK, measuring timing, leakage, and power.
-            </li>
-            <li>
-              Drove an 18% reduction in dynamic power for optimized designs and
-              co-authored 2 internal research documents for publication support.
-            </li>
-          </ul>
+          <a
+            href="https://ieeexplore.ieee.org/document/10575000"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 mt-3 text-sm sm:text-base text-gray-300 hover:text-white transition-colors"
+          >
+            <ExternalLink className="w-4 h-4" />
+            IEEE Xplore
+          </a>
         </div>
       </div>
     ),
   },
   {
-    title: "Leadership & Service",
+    title: "Leadership",
     id: "leadership",
     icon: <Award className="w-4 h-4 sm:w-5 sm:h-5" />,
     content: (
       <div className="space-y-3 sm:space-y-4">
-        <div className="bg-gray-800/50 p-4 sm:p-5 rounded-lg hover:bg-gray-700/50 transition-all duration-300">
-          <h3 className="font-bold text-base sm:text-lg">
-            ECE Senator, VGSA, USC
-          </h3>
-          <p className="text-blue-500 text-sm sm:text-base">
-            2025 - 2026
-          </p>
-          <p className="text-gray-300 text-sm sm:text-base mt-2">
-            Elected graduate representative for the Electrical and Computer
-            Engineering department at USC.
-          </p>
-        </div>
-
-        <div className="bg-gray-800/50 p-4 sm:p-5 rounded-lg hover:bg-gray-700/50 transition-all duration-300">
-          <h3 className="font-bold text-base sm:text-lg">
-            Best NSS Coordinator, SRM
-          </h3>
-          <p className="text-blue-500 text-sm sm:text-base">
-            2023
-          </p>
-          <p className="text-gray-300 text-sm sm:text-base mt-2">
-            Led and coordinated 300+ student volunteers across health camps,
-            donation drives, and public awareness initiatives.
-          </p>
-        </div>
-
-        <div className="bg-gray-800/50 p-4 sm:p-5 rounded-lg hover:bg-gray-700/50 transition-all duration-300">
-          <h3 className="font-bold text-base sm:text-lg">
-            Head Photographer, Camogenics Club
-          </h3>
-          <p className="text-blue-500 text-sm sm:text-base">
-            2023 - 2024
-          </p>
-          <p className="text-gray-300 text-sm sm:text-base mt-2">
-            Kept photography visible as a hobby while leading media coverage for
-            20+ major campus events.
-          </p>
-        </div>
+        {LEADERSHIP.map((item) => (
+          <div
+            key={item.title}
+            className="bg-gray-800/50 p-4 sm:p-5 rounded-lg hover:bg-gray-700/50 transition-all duration-300 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1"
+          >
+            <h3 className="font-bold text-base sm:text-lg">{item.title}</h3>
+            <p className="text-blue-500 text-sm sm:text-base">{item.dates}</p>
+          </div>
+        ))}
       </div>
     ),
   },
@@ -274,12 +292,24 @@ const AboutSection = () => {
     <section id="about" className="py-16">
       <div className="container mx-auto px-4 sm:px-8">
         <h2 className="text-3xl sm:text-4xl font-semibold mb-6 text-center">About Me</h2>
-        <p className="text-center text-[#ADB7BE] max-w-3xl mx-auto mb-8 text-sm sm:text-base lg:text-lg">
-          I build hardware-centric systems with emphasis on scan-based
-          testability, ATPG algorithms, BIST architectures, RTL design,
-          low-power circuit analysis, and physical design evaluation across
-          benchmark and implementation flows.
-        </p>
+        <div className="text-center text-[#ADB7BE] max-w-3xl mx-auto mb-8 text-sm sm:text-base lg:text-lg space-y-4">
+          <p>
+            I&apos;m an MS Electrical and Computer Engineering student at USC,
+            from Chennai, with a B.Tech in Electronics and Computer Engineering
+            from SRM.
+          </p>
+          <p>
+            I write the golden model and the test plan before the RTL. I
+            understand the flow from spec to tapeout: RTL, verification,
+            synthesis, DFT insertion, place and route, and timing closure. I
+            ship with agentic AI coding workflows (Claude Code).
+          </p>
+          <p>
+            It started with in-memory computing research at SRM, simulating
+            RRAM crossbars and SRAM compute-in-memory circuits. That is where my
+            interest in AI hardware came from.
+          </p>
+        </div>
         <div className="space-y-4 sm:space-y-6">
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
             {TAB_DATA.map((tab) => (
