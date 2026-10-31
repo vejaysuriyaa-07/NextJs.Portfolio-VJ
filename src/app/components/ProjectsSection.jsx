@@ -112,7 +112,7 @@ const ProjectsSection = () => {
           <div className="w-full">
             <ul
               ref={ref}
-              className="grid grid-cols-1 md:grid-cols-2 auto-rows-fr gap-6 sm:gap-8 md:gap-10 lg:gap-12"
+              className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12"
             >
               {filteredProjects.map((project, index) => (
                 <motion.li
@@ -144,7 +144,7 @@ const ProjectsSection = () => {
                   Focus:
                 </span>
                 Design verification and DFT, test-first: golden model and test
-                plan before RTL, and the tooling to measure what matters.
+                plan before RTL.
               </p>
             </div>
           </div>

@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 const AchievementsSection = () => {
   const achievementsList = [
     {
-      metric: "Stuck-at Fault Coverage",
-      value: 100,
+      metric: "Minimum Stuck-at Coverage",
+      value: 97.37,
       postfix: "%",
       description:
-        "Top of a 97.37 to 100% range across 6 ISCAS-85 circuits, from a C++17 D-Algorithm ATPG engine with SCOAP heuristics."
+        "97.37 to 100% across 6 ISCAS-85 circuits, from a C++17 D-Algorithm ATPG engine with SCOAP heuristics."
     },
     {
       metric: "c432 Coverage with TPI",
@@ -19,18 +19,18 @@ const AchievementsSection = () => {
         "Up from 98.36% with 4 control points at 6.9% estimated area overhead, using 1,000 LFSR patterns per seed."
     },
     {
-      metric: "DRC Violations Cut",
+      metric: "ecoRoute Baseline on AES",
       value: 15.8,
       postfix: "%",
       description:
-        "Native ecoRoute baseline on AES (57 to 48 violations) in 111 s, touching 1.65% of nets."
+        "Fewer DRC violations (57 to 48) in 111 s, touching 1.65% of nets: the baseline the RL agent must beat."
     },
     {
       metric: "AES Violations KLayout Missed",
       value: 82,
       postfix: "%",
       description:
-        "Including all 47 shorts, so the RL agent's reward uses Innovus verify_drc counts instead."
+        "Including all 47 shorts, so the RL agent's reward uses Innovus counts instead."
     },
     {
       metric: "RTL Live on the Marketplace",
