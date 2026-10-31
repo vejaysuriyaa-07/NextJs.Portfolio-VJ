@@ -4,7 +4,7 @@ import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
 
-const FILTERS = ["All", "Verification", "DFT", "AI for EDA", "Tooling"];
+const FILTERS = ["All", "RTL", "Test", "AI for EDA", "Tooling"];
 
 // Bullets come from the resume, verbatim or lightly trimmed.
 const projectsData = [
@@ -20,7 +20,7 @@ const projectsData = [
       "Next: Verilog RTL for the first stages, verified in Cadence Xcelium against the model's vectors, for the Nov 30, 2026 shuttle.",
     ],
     links: [{ label: "GitHub", href: "https://github.com/vejaysuriyaa-07/tt-camera-isp" }],
-    tag: ["All", "Verification"],
+    tag: ["All", "RTL"],
   },
   {
     id: 2,
@@ -50,7 +50,7 @@ const projectsData = [
       "Built fault simulation, Galois LFSR/MISR BIST and full-scan insertion for sequential .bench netlists; 22 GoogleTest cases.",
     ],
     links: [{ label: "GitHub", href: "https://github.com/vejaysuriyaa-07/atpg-tpi-ppa" }],
-    tag: ["All", "DFT"],
+    tag: ["All", "Test"],
   },
   {
     id: 4,
@@ -143,8 +143,7 @@ const ProjectsSection = () => {
                 <span className="block text-white text-xl sm:text-2xl font-bold mb-2 sm:mb-3">
                   Focus:
                 </span>
-                Design verification and DFT, test-first: golden model and test
-                plan before RTL.
+                Test-first: golden model and test plan before RTL.
               </p>
             </div>
           </div>

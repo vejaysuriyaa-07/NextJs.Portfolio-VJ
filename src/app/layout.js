@@ -1,9 +1,9 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Vejay Suriyaa Senguttuvan | Design Verification and DFT | USC MS ECE",
+  title: "Vejay Suriyaa Senguttuvan | USC MS ECE",
   description:
-    "Vejay Suriyaa Senguttuvan | Design Verification and DFT | USC MS ECE",
+    "Vejay Suriyaa Senguttuvan | USC MS ECE",
 };
 
 export default function RootLayout({ children }) {

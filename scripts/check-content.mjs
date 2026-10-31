@@ -6,7 +6,7 @@ import { join } from "node:path";
 const OUT = "out";
 
 const REQUIRED = [
-  "Vejay Suriyaa Senguttuvan | Design Verification and DFT | USC MS ECE",
+  "Vejay Suriyaa Senguttuvan | USC MS ECE",
   "Master of Science in Electrical and Computer Engineering",
   "May 2027",
   "Course Producer",
@@ -25,6 +25,9 @@ const REQUIRED = [
 const FORBIDDEN = [
   "M.S. in Computer Engineering",
   "Aspiring DFT Engineer",
+  "Design Verification and DFT",
+  "Design verification and DFT",
+  "DFT and VLSI portfolio",
   "dynamic power",
   "-0.8 ns",
   "6,400",

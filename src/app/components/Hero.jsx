@@ -41,8 +41,7 @@ const Hero = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] italic text-base sm:text-lg mb-3 lg:text-xl">
-            MS ECE at USC (May 2027). Design Verification and DFT. Building the
-            tools I wish existed.
+            MS ECE at USC (May 2027). Building the tools I wish existed.
           </p>
           <p className="text-[#ADB7BE] text-sm sm:text-base mb-8">
             Test-first verification, Cadence Xcelium/Innovus, C++ ATPG tooling,

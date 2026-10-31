@@ -40,7 +40,7 @@ const Gallery = () => {
           className="text-center text-[#ADB7BE] max-w-3xl mx-auto mb-10 text-sm sm:text-base lg:text-lg"
         >
           A visual snapshot of volunteer work, NSS activities, awards, and
-          campus moments alongside the main DFT and VLSI portfolio.
+          campus moments alongside my engineering work.
         </motion.p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
