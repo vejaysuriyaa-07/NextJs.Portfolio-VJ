@@ -5,39 +5,40 @@ import { motion } from "framer-motion";
 const AchievementsSection = () => {
   const achievementsList = [
     {
-      metric: "Fault Coverage",
-      value: 95,
-      postfix: "%+",
-      description:
-        "Achieved 95%+ stuck-at fault coverage on ISCAS-85 benchmark circuits including c432 and c880 in a custom ATPG flow."
-    },
-    {
-      metric: "Prototype Modules",
-      value: 3,
-      description:
-        "Contributed to 3 low-power VLSI and embedded prototype modules during research work at SRM."
-    },
-    {
-      metric: "Dynamic Power Reduction",
-      value: 18,
+      metric: "Stuck-at Fault Coverage",
+      value: 100,
+      prefix: "97.37–",
       postfix: "%",
       description:
-        "Reduced dynamic power by 18% through schematic-level and layout-driven optimization in 45nm Cadence Virtuoso studies."
+        "Across 6 ISCAS-85 circuits from a C++17 D-Algorithm ATPG engine with SCOAP heuristics."
     },
     {
-      metric: "Timing Closure",
-      value: 0.2,
-      prefix: "+",
-      postfix: " ns",
+      metric: "c432 Coverage with TPI",
+      value: 99.87,
+      postfix: "%",
       description:
-        "Improved worst-case slack from -0.8 ns to +0.2 ns in a 28nm RTL-to-GDSII physical design flow at 150 MHz."
+        "Up from 98.36% with 4 control points at 6.9% estimated area overhead, using 1,000 LFSR patterns per seed."
     },
     {
-      metric: "Student Volunteers Led",
-      value: 300,
-      postfix: "+",
+      metric: "DRC Violations Cut",
+      value: 15.8,
+      postfix: "%",
       description:
-        "Coordinated 300+ volunteers through NSS initiatives spanning health camps, donation drives, and awareness programs."
+        "Native ecoRoute baseline on AES (57 to 48 violations) in 111 s, touching 1.65% of nets."
+    },
+    {
+      metric: "AES Violations KLayout Missed",
+      value: 82,
+      postfix: "%",
+      description:
+        "Including all 47 shorts, so the RL agent's reward uses Innovus verify_drc counts instead."
+    },
+    {
+      metric: "RTL Live on the Marketplace",
+      value: "0.5.1",
+      prefix: "v",
+      description:
+        "Open-source VS Code extension that renders a live Verilog schematic on every edit."
     }
   ];
 
