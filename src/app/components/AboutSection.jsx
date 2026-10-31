@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Cpu, GraduationCap, Briefcase, BookOpen, Award, ExternalLink } from "lucide-react";
+import { Cpu, GraduationCap, BookOpen, Award, ExternalLink } from "lucide-react";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -81,28 +81,6 @@ const SKILL_GROUPS = [
       "LTspice",
       "ModelSim",
       "SkyWater SKY130 PDK",
-    ],
-  },
-];
-
-const EXPERIENCE = [
-  {
-    title:
-      "Course Producer, EE 658 Diagnosis and Design of Reliable Digital Systems (graduate DFT)",
-    place: "University of Southern California",
-    dates: "Aug 2026 - Present",
-    bullets: [
-      "Selected by Prof. Moe Tabar after earning an A; grade homework, projects and exams on fault modeling, ATPG, fault simulation and BIST.",
-      "Hold weekly office hours on test generation, fault simulation and testability problems; set assignment deadlines and proctor exams.",
-    ],
-  },
-  {
-    title: "Research Assistant, In-Memory Computing and VLSI",
-    place: "Prof. Mohanbabu A.'s lab, SRM IST Chennai (part-time)",
-    dates: "Jan 2025 - Jul 2025",
-    bullets: [
-      "Simulated RRAM crossbar arrays in HSPICE and LTspice for analog in-memory computing (IMC) matrix-vector multiplication; worked on SRAM compute-in-memory circuits in Cadence Virtuoso with Verilog/ModelSim for the digital side.",
-      "Modeled in Python and MATLAB how device variation and limited precision degrade neural-network accuracy on IMC hardware.",
     ],
   },
 ];
@@ -201,30 +179,6 @@ const TAB_DATA = [
             </div>
           </div>
         </div>
-      </div>
-    ),
-  },
-  {
-    title: "Experience",
-    id: "experience",
-    icon: <Briefcase className="w-4 h-4 sm:w-5 sm:h-5" />,
-    content: (
-      <div className="space-y-3 sm:space-y-4">
-        {EXPERIENCE.map((role) => (
-          <div
-            key={role.title}
-            className="bg-gray-800/50 p-4 sm:p-5 rounded-lg hover:bg-gray-700/50 transition-all duration-300"
-          >
-            <h3 className="font-bold text-base sm:text-lg">{role.title}</h3>
-            <p className="text-gray-400 text-sm sm:text-base">{role.place}</p>
-            <p className="text-blue-500 text-sm sm:text-base mt-1">{role.dates}</p>
-            <ul className="mt-4 space-y-2 text-sm sm:text-base text-gray-300 list-disc pl-5">
-              {role.bullets.map((bullet, index) => (
-                <li key={index}>{bullet}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
       </div>
     ),
   },

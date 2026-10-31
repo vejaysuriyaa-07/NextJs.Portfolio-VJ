@@ -1,6 +1,7 @@
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import AboutSection from "./components/AboutSection";
+import ExperienceTimeline from "./components/ExperienceTimeline";
 import ProjectsSection from "./components/ProjectsSection";
 import Gallery from "./components/Gallery";
 import Footer from "./components/Footer";
@@ -24,6 +25,9 @@ export default function Home() {
         </Reveal>
         <Reveal>
           <AboutSection />
+        </Reveal>
+        <Reveal>
+          <ExperienceTimeline />
         </Reveal>
         <Reveal>
           <ProjectsSection />

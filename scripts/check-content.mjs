@@ -27,6 +27,7 @@ const REQUIRED = [
   "Show details",
   "Before / after comparison",
   "data-tilt",
+  "Experience timeline",
   "Circuit traces",
   "stuck-at coverage: 97.37–100% (6 circuits)",
   "coverage: 98.36% → 99.87%",
