@@ -2,6 +2,7 @@
 import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
+import { PROJECT_VISUALS } from "./ProjectVisuals";
 import { motion, useInView } from "framer-motion";
 
 const FILTERS = ["All", "RTL", "Test", "AI for EDA", "Tooling"];
@@ -20,6 +21,8 @@ const projectsData = [
     ],
     links: [{ label: "GitHub", href: "https://github.com/vejaysuriyaa-07/tt-camera-isp" }],
     tag: ["All", "RTL"],
+    visual: "isp",
+    featured: true,
   },
   {
     id: 2,
@@ -34,6 +37,7 @@ const projectsData = [
     ],
     links: [],
     tag: ["All", "AI for EDA"],
+    visual: "drc",
   },
   {
     id: 3,
@@ -48,6 +52,7 @@ const projectsData = [
     ],
     links: [{ label: "GitHub", href: "https://github.com/vejaysuriyaa-07/atpg-tpi-ppa" }],
     tag: ["All", "Test"],
+    visual: "atpg",
   },
   {
     id: 4,
@@ -64,6 +69,7 @@ const projectsData = [
       { label: "GitHub", href: "https://github.com/vejaysuriyaa-07/rtl-live" },
     ],
     tag: ["All", "Tooling"],
+    visual: "rtl",
   },
 ];
 
@@ -120,7 +126,7 @@ const ProjectsSection = () => {
                   initial="initial"
                   animate={isInView ? "animate" : "initial"}
                   transition={{ duration: 0.3, delay: index * 0.2 }}
-                  className="w-full"
+                  className={`w-full ${project.featured ? "md:col-span-2" : ""}`}
                 >
                   <ProjectCard
                     title={project.title}
@@ -128,6 +134,8 @@ const ProjectsSection = () => {
                     description={project.description}
                     bullets={project.bullets}
                     links={project.links}
+                    visual={PROJECT_VISUALS[project.visual]}
+                    featured={project.featured}
                   />
                 </motion.li>
               ))}
