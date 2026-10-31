@@ -2,11 +2,15 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { motion, AnimatePresence } from "framer-motion";
+import { Command } from "lucide-react";
+import LiveClock from "./LiveClock";
+import { OPEN_COMMAND_MENU } from "./CommandMenu";
 
 const navLinks = [
   { title: "Home", path: "#hero" },
   { title: "About", path: "#about" },
   { title: "Achievements", path: "#achievements" },
+  { title: "Experience", path: "#experience" },
   { title: "Projects", path: "#projects" },
   { title: "Highlights", path: "#gallery" },
 ];
@@ -185,6 +189,17 @@ const Navbar = () => {
               ))}
             </ul>
           </div>
+        </div>
+
+        <div className="hidden md:flex items-center gap-6">
+          <LiveClock />
+          <button
+            onClick={() => window.dispatchEvent(new Event(OPEN_COMMAND_MENU))}
+            className="inline-flex items-center gap-1.5 rounded-lg border border-slate-600 px-2.5 py-1 text-sm text-[#ADB7BE] hover:border-white hover:text-white transition-colors duration-300"
+            aria-label="Open command menu"
+          >
+            <Command className="h-3.5 w-3.5" />K
+          </button>
         </div>
       </div>
 

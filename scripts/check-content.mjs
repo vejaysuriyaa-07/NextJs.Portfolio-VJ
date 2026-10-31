@@ -21,6 +21,10 @@ const REQUIRED = [
   "Best NSS Coordinator",
   "Write-up coming",
   "resume.pdf",
+  "Scroll progress",
+  "Command menu",
+  "America/Los_Angeles",
+  "verilog",
 ];
 
 const FORBIDDEN = [

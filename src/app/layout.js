@@ -1,4 +1,5 @@
 import "./globals.css";
+import MotionProvider from "./components/MotionProvider";
 
 export const metadata = {
   title: "Vejay Suriyaa Senguttuvan | USC MS ECE",
@@ -9,7 +10,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <MotionProvider>{children}</MotionProvider>
+      </body>
     </html>
   );
 }
