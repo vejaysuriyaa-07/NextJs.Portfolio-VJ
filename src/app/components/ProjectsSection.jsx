@@ -11,7 +11,6 @@ const projectsData = [
   {
     id: 1,
     title: "Camera ISP Pipeline for Tiny Tapeout (SKY130)",
-    status: { kind: "progress", label: "In progress · shuttle Nov 30, 2026" },
     tech: ["Python", "NumPy", "Verilog", "Cadence Xcelium", "SKY130"],
     description:
       "RTL and verification for a camera image signal processing pipeline on the Tiny Tapeout TTSKY26d shuttle (SkyWater SKY130), built test-first: the test plan and golden model came before any RTL.",
@@ -25,7 +24,6 @@ const projectsData = [
   {
     id: 2,
     title: "RL Agent for Post-Route DRC Closure (AI for EDA)",
-    status: { kind: "progress", label: "In progress · EE 599 team project" },
     tech: ["Python", "Tcl", "Cadence Innovus", "mflowgen", "KLayout", "SKY130"],
     description:
       "A 4-person team building an RL agent that fixes post-route DRC violations with minimal layout disruption. I own the measurement side: the flow, the reward inputs and the baseline the agent must beat.",
@@ -40,7 +38,6 @@ const projectsData = [
   {
     id: 3,
     title: "Combinational ATPG Engine, Test Point Insertion, BIST Simulator and Scan Insertion",
-    status: { kind: "done", label: "Done · EE 658" },
     tech: ["C++17", "Python", "ISCAS-85"],
     description:
       "A DFT toolkit for the EE 658 course project: ATPG, test point insertion, fault simulation, BIST and full-scan insertion, evaluated on ISCAS-85 benchmarks.",
@@ -55,7 +52,6 @@ const projectsData = [
   {
     id: 4,
     title: "RTL Live, VS Code Extension",
-    status: { kind: "published", label: "Published · v0.5.1" },
     tech: ["VS Code", "Verilog", "Agentic AI workflow"],
     description:
       "An open-source VS Code extension, published on the VS Code Marketplace, that renders a live Verilog schematic in the sidebar.",
@@ -128,7 +124,6 @@ const ProjectsSection = () => {
                 >
                   <ProjectCard
                     title={project.title}
-                    status={project.status}
                     tech={project.tech}
                     description={project.description}
                     bullets={project.bullets}
