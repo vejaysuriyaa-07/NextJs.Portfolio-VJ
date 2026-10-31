@@ -1,9 +1,9 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Vejay Suriyaa | DFT and VLSI Portfolio",
+  title: "Vejay Suriyaa Senguttuvan | Design Verification and DFT | USC MS ECE",
   description:
-    "Portfolio of Vejay Suriyaa Senguttuvan focused on DFT, ATPG, scan insertion, RTL design, and VLSI implementation.",
+    "Vejay Suriyaa Senguttuvan | Design Verification and DFT | USC MS ECE",
 };
 
 export default function RootLayout({ children }) {

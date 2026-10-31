@@ -3,8 +3,16 @@ import React from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
+import { FileText, Github, Linkedin, Mail } from "lucide-react";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
+const heroLinks = [
+  { label: "Resume", href: `${basePath}/resume.pdf`, icon: FileText, primary: true },
+  { label: "GitHub", href: "https://github.com/vejaysuriyaa-07", icon: Github },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/vejay-suriyaa-a274b3201", icon: Linkedin },
+  { label: "Email", href: "mailto:senguttu@usc.edu", icon: Mail },
+];
 
 const Hero = () => {
   return (
@@ -23,7 +31,7 @@ const Hero = () => {
             <br />
             <TypeAnimation
               sequence={[
-                "Vejay Suriyaa",
+                "Vejay Suriyaa Senguttuvan",
                 1000,
               ]}
               wrapper="span"
@@ -32,10 +40,34 @@ const Hero = () => {
               className="type-animation"
             />
           </h1>
-          <p className="text-[#ADB7BE] italic text-base sm:text-lg mb-6 lg:text-xl">
-            Aspiring DFT Engineer focused on scan insertion, ATPG, BIST, RTL
-            design, VLSI test, and timing-driven implementation.
+          <p className="text-[#ADB7BE] italic text-base sm:text-lg mb-3 lg:text-xl">
+            MS ECE at USC (May 2027). Design Verification and DFT. Building the
+            tools I wish existed.
           </p>
+          <p className="text-[#ADB7BE] text-sm sm:text-base mb-8">
+            Test-first verification, Cadence Xcelium/Innovus, C++ ATPG tooling,
+            RL applied to chip design, agentic AI workflows.
+          </p>
+          <div className="flex flex-wrap justify-center sm:justify-start gap-3">
+            {heroLinks.map(({ label, href, icon: Icon, primary }) => (
+              <motion.a
+                key={label}
+                href={href}
+                target={href.startsWith("mailto:") ? undefined : "_blank"}
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`inline-flex items-center gap-2 text-sm sm:text-base font-semibold py-2 px-4 rounded-lg transition-all duration-300 ${
+                  primary
+                    ? "bg-gradient-to-r from-primary-400 to-secondary-600 text-white"
+                    : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 hover:text-white"
+                }`}
+              >
+                <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                {label}
+              </motion.a>
+            ))}
+          </div>
         </motion.div>
 
         {/* Responsive profile image section */}
